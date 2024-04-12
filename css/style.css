@@ -72,10 +72,6 @@ img {
     pointer-events: auto;
 }
 
-.ticket:hover {
-    transform: rotateY(180deg) translateZ(1px);
-}
-
 .front, .back {
     grid-area: 1/1;
     background-color: #6e6176;
@@ -205,12 +201,13 @@ img {
 
 .code {
     font: 0.75em sans-serif;
-    color: black;
+    font-weight: bold;
+    color: grey;
 }
 
 .dev {
     margin: 15%;
-    text-decoration: none;
+    color: grey;
 }
 
 .userName {
