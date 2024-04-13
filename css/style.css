@@ -230,12 +230,20 @@ img {
 }
 
 .userNum {
-    font-size: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    color: blue;
+    text-decoration: underline;
 }
 
 .back {
     transform: rotateY(180deg) translateZ(1px);
 }
+
+iframe {
+    background: rgba(0, 0, 0, 0.75)!important;
+}
+
 
 @media screen and (max-width: 400px) {
     .ticket {
