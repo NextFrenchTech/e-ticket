@@ -8,12 +8,12 @@ document.addEventListener("DOMContentLoaded", function() {
         userNum.classList.add("hidden");
 
         // Retirer l'écouteur d'événement après la première interaction
-        document.removeEventListener("click", hideFormText);
+        document.removeEventListener("touchstart", hideFormText);
         document.removeEventListener("mousemove", hideFormText);
     }
 
-    // Ajouter un écouteur d'événement pour le clic sur le document
-    document.addEventListener("click", hideFormText);
+    // Ajouter un écouteur d'événement pour le toucher sur le document
+    document.addEventListener("touchstart", hideFormText);
     // Ajouter un écouteur d'événement pour le déplacement de souris
     document.addEventListener("mousemove", hideFormText);
 });
