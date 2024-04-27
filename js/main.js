@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.addEventListener("mousemove", hideFormText);
 });
 
-/*animationTicket*/
+/*customTicket*/
 
 const speed = 4.5;
 const r = gsap.timeline({ repeat: -1 });
