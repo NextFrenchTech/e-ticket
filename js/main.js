@@ -60,6 +60,9 @@ document.addEventListener("DOMContentLoaded", function() {
         vismeFormDiv.style.display = "block";
     });
 });
+
+/*customForm*/
+
 document.addEventListener("DOMContentLoaded", function() {
     var userNum = document.querySelector(".userNum");
 
@@ -68,9 +71,12 @@ document.addEventListener("DOMContentLoaded", function() {
         userNum.classList.add("hidden");
 
         // Retirer l'écouteur d'événement après la première interaction
+        document.removeEventListener("click", hideFormText);
         document.removeEventListener("mousemove", hideFormText);
     }
 
+    // Ajouter un écouteur d'événement pour le clic sur le document
+    document.addEventListener("click", hideFormText);
     // Ajouter un écouteur d'événement pour le déplacement de souris
     document.addEventListener("mousemove", hideFormText);
 });
