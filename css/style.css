@@ -230,7 +230,7 @@ img {
 }
 
 .userNum {
-    font-size: 15px;
+    font-size: 12px;
     font-weight: bold;
     color: blue;
     text-decoration: underline;
@@ -249,4 +249,10 @@ iframe {
     .ticket {
         --scale: 0.75;
     }
+}
+
+/*customForm*/
+
+.hidden {
+    display: none;
 }
