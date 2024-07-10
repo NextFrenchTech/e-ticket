@@ -150,7 +150,8 @@ img {
 }
 
 .logo {
-    width: 100%;
+    border-radius: 100px;
+    width: 55%;
     place-self: center;
     transform: translateY(-14%);
 }
@@ -221,7 +222,8 @@ img {
 
 .profile {
     border-radius: 100%;
-    width: 75px;
+    width: 55px;
+    margin-right: 10px;
     image-rendering: optimize-speed;
     image-rendering: crisp-edges;
 }

@@ -1,3 +1,16 @@
+/*automatisation de la date<p id="current_date"></p>*/ 
+
+$( document ).ready(function() {
+
+    date = new Date();
+    year = date.getFullYear();
+    month = date.getMonth() + 1;
+    day = date.getDate() + 1;
+    document.getElementById("current_date").innerHTML = day + "/" + month + "/" + year;
+    
+    console.log( "ready!" );
+});
+
 /*customForm*/
 
 document.addEventListener("DOMContentLoaded", function() {
