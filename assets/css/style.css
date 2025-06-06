@@ -3,7 +3,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 80vh;
   row-gap: 1em;
   background-image: radial-gradient(circle, #fff 60%, #cfcecb);
   font: 0.9em sans-serif;
@@ -17,6 +17,7 @@ body {
   width: 320px;
   height: 320px;
   background-color: #fff;
+  margin-top: 7.5%;
 }
 
 .scratch-card-cover-container {
