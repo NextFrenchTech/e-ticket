@@ -145,10 +145,6 @@ body {
   }
 }
 
-p {
-  margin: 0;
-}
-
 .code {
     font: 0.8em sans-serif;
     font-weight: bold;
