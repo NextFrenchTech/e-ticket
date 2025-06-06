@@ -3,7 +3,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 80vh;
+  min-height: 100vh;
   row-gap: 1em;
   background-image: radial-gradient(circle, #fff 60%, #cfcecb);
   font: 0.9em sans-serif;
