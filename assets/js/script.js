@@ -139,3 +139,13 @@ const plot = (e) => {
     }, 5);
   }
 };
+
+function resizeCanvas() {
+  const canvas = document.querySelector('.scratch-card-canvas');
+  const container = canvas.parentElement;
+  canvas.width = container.offsetWidth;
+  canvas.height = container.offsetWidth;
+}
+
+window.addEventListener('resize', resizeCanvas);
+window.addEventListener('DOMContentLoaded', resizeCanvas);
