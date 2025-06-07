@@ -23,6 +23,34 @@ canvas.height = canvasHeight;
 
 context.scale(devicePixelRatio, devicePixelRatio);
 
+// ---------- Image aléatoire + message avec mémoire localStorage ----------
+const images = [
+  './assets/image/image1.png',
+  './assets/image/image2.png',
+  './assets/image/image3.png',
+];
+
+const imageMessages = {
+  './assets/image/image1.png': '🎂 Une surprise t’attend à ma fête d’anniversaire !',
+  './assets/image/image2.png': '🎈 Prépare-toi pour une journée mémorable !',
+  './assets/image/image3.png': '🎉 Surprises et rires garantis, à ne pas manquer !',
+};
+
+// Récupérer la dernière image depuis localStorage
+const lastImage = localStorage.getItem('lastScratchCardImage');
+
+let randomIndex;
+do {
+  randomIndex = Math.floor(Math.random() * images.length);
+} while (images[randomIndex] === lastImage && images.length > 1);
+
+const selectedImage = images[randomIndex];
+scratchCardImage.src = selectedImage;
+
+// Sauvegarder la nouvelle image dans localStorage
+localStorage.setItem('lastScratchCardImage', selectedImage);
+// ------------------------------------------------
+
 if (isSafari) {
   canvas.classList.add('hidden');
 }
@@ -31,9 +59,9 @@ canvas.addEventListener('pointerdown', (e) => {
   scratchCardCover.classList.remove('shine');
   ({ x: positionX, y: positionY } = getPosition(e));
   clearTimeout(clearDetectionTimeout);
-  
+
   canvas.addEventListener('pointermove', plot);
-  
+
   window.addEventListener('pointerup', (e) => {
     canvas.removeEventListener('pointermove', plot);
     clearDetectionTimeout = setTimeout(() => {
@@ -60,23 +88,28 @@ const checkBlackFillPercentage = () => {
   }
 
   const blackFillPercentage = blackPixelCount * 100 / (canvasWidth * canvasHeight);
- 
+
   if (blackFillPercentage >= 45) {
     scratchCardCoverContainer.classList.add('clear');
     confetti({
       particleCount: 100,
       spread: 90,
       origin: {
-         y: (scratchCardText.getBoundingClientRect().bottom + 60) / window.innerHeight,
+        y: (scratchCardText.getBoundingClientRect().bottom + 60) / window.innerHeight,
       },
     });
-    scratchCardText.textContent = '🎉 Je t\'invite à venir fêter mon anniversaire avec moi !';
+
+    // 🎯 Message en fonction de l’image
+    scratchCardText.textContent =
+      imageMessages[selectedImage] || '🎉 Je t\'invite à venir fêter mon anniversaire avec moi !';
+
     scratchCardImage.classList.add('animate');
+
     scratchCardCoverContainer.addEventListener('transitionend', () => {
       scratchCardCoverContainer.classList.add('hidden');
     }, { once: true });
   }
-}
+};
 
 const getPosition = ({ clientX, clientY }) => {
   const { left, top } = canvas.getBoundingClientRect();
@@ -84,7 +117,7 @@ const getPosition = ({ clientX, clientY }) => {
     x: clientX - left,
     y: clientY - top,
   };
-}
+};
 
 const plotLine = (context, x1, y1, x2, y2) => {
   var diffX = Math.abs(x2 - x1);
@@ -98,7 +131,6 @@ const plotLine = (context, x1, y1, x2, y2) => {
 
   while (i < dist) {
     t = Math.min(1, i / dist);
-
     x = x1 + (x2 - x1) * t;
     y = y1 + (y2 - y1) * t;
 
@@ -108,7 +140,7 @@ const plotLine = (context, x1, y1, x2, y2) => {
 
     i += step;
   }
-}
+};
 
 const setImageFromCanvas = () => {
   canvas.toBlob((blob) => {
@@ -122,7 +154,7 @@ const setImageFromCanvas = () => {
     }
     previousUrl = url;
   });
-}
+};
 
 let setImageTimeout = null;
 

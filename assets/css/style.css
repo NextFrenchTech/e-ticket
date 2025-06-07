@@ -7,6 +7,8 @@ body {
   row-gap: 1em;
   background-image: radial-gradient(circle, #fff 60%, #cfcecb);
   font: 0.9em sans-serif;
+  font-weight: bold;
+  color: gray;
 }
 
 .scratch-card {
@@ -149,8 +151,8 @@ body {
 .code {
     font: 0.8em sans-serif;
     font-weight: bold;
-    color: grey;
+    color: gray;
 }
 .dev {
-    color: grey;
+    color: gray;
 }
