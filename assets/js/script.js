@@ -28,12 +28,18 @@ const images = [
   './assets/image/image1.png',
   './assets/image/image2.png',
   './assets/image/image3.png',
+  './assets/image/image4.png',
+  './assets/image/image5.png',
+  './assets/image/image6.png',
 ];
 
-const imageMessages = {
+const imagesMessages = {
   './assets/image/image1.png': '🎂 Une surprise t’attend à ma fête d’anniversaire !',
   './assets/image/image2.png': '🎈 Prépare-toi pour une journée mémorable !',
   './assets/image/image3.png': '🎉 Surprises et rires garantis, à ne pas manquer !',
+  './assets/image/image4.png': '🎂 Une surprise t’attend à ma fête d’anniversaire !',
+  './assets/image/image5.png': '🎈 Prépare-toi pour une journée mémorable !',
+  './assets/image/image6.png': '🎉 Surprises et rires garantis, à ne pas manquer !',
 };
 
 // Récupérer la dernière image depuis localStorage
@@ -101,7 +107,7 @@ const checkBlackFillPercentage = () => {
 
     // 🎯 Message en fonction de l’image
     scratchCardText.textContent =
-      imageMessages[selectedImage] || '🎉 Je t\'invite à venir fêter mon anniversaire avec moi !';
+      imagesMessages[selectedImage] || '🎉 Je t\'invite à venir fêter mon anniversaire avec moi !';
 
     scratchCardImage.classList.add('animate');
 
